@@ -24,26 +24,50 @@
 <body>
   <!-- PAGE HEADER -->
   <header class="page-header">
-    <div class="container">
+    <div class="container page-header-container">
       <nav class="page-navigation">
-        <a class="logo link" href="./index.html"><i>SIMPLY</i> CHOCOLATE</a>
+        <a class="logo link" href="./index.html"><i>SIMPLY</i> CHOCOLATE
+          <svg class="logo-icon" width="24" height="24" aria-label="simply chocolate logotype icon">
+            <!-- "aria-lable" - скринридер для svg -->
+            <use href="./images/icons/sprite.svg#icon-chocolate">
+            </use>
+          </svg>
+        </a>
         <ul class="menu list">
           <li class="menu-item"><a class="menu-link link" href="./index.html" class="navigation">Home</a></li>
           <li class="menu-item"><a class="menu-link link" href="" class="navigation">How it’s made?</a></li>
           <li class="menu-item"><a class="menu-link link" href="" class="navigation">Chocolate is loved</a></li>
         </ul>
       </nav>
+      <ul class="social-list list">
+        <li class="social-list-item">
+          <a href="" class="social-list-link">
+            <svg class="social-list-icon" width="24" height="24">
+              <use href=" ./images/icons/sprite.svg#icon-instagram">
+              </use>
+            </svg>
+          </a>
+        </li>
+        <li class="social-list-item">
+          <a href="" class="social-list-link">
+            <svg class="social-list-icon" width="24" height="24">
+              <use href=" ./images/icons/sprite.svg#icon-twitter">
+              </use>
+            </svg>
+          </a>
+        </li>
+      </ul>
     </div>
   </header>
 
   <main>
     <!-- HERO SECTION -->
     <section class="hero">
-      <div class="container">
-        <h1 class="main-title">
-          Treat yourself or a loved one to our finest ingredients for a moment
-          of pure delight!
-        </h1>
+      <h1 class="main-title">
+        Treat yourself or a loved one to our finest ingredients for a moment
+        of pure delight!
+      </h1>
+      <div class="hero-bottom-block">
         <button class="buy-now-btn" type="button">Buy now</button>
         <a class="how-made-link link" href="">How it’s made</a>
         <a class="scroll-down-link link" href="#benefits">scroll down</a>
@@ -51,8 +75,8 @@
     </section>
 
     <!-- OUR BENEFITS -->
-    <section class="benefits">
-      <div class="container">
+    <section class="benefits section" id="benefits">
+      <div class="benefits-container container">
         <h2 class="visually-hidden">Our benefits</h2>
         <ul class="benefits-list list">
           <li class="benefits-list-item">
@@ -105,19 +129,82 @@
             <img class="ingredients-list-img" src="./images/ingredients/milk-chocolate.png" alt="milk chocolate"
               width="206" height="160" />
             <h3 class="ingredients-list-title">milk chocolate</h3>
+            <div class="overlay">
+              <h3 class="overlay-title">milk chocolate</h3>
+              <ul class="overlay-tegs-list list">
+                <li class="overlay-tegs-item">
+                  <p class="overlay-tegs-list-text">chocolate</p>
+                </li>
+                <li class="overlay-tegs-item">
+                  <p class="overlay-tegs-list-text">the benefits</p>
+                </li>
+              </ul>
+              <p class="overlay-text">Milk chocolate is a solid chocolate confectionery containing cocoa, sugar and
+                milk. It is the most consumed type of chocolate. Chocolate was originally sold and consumed as a
+                beverage in pre-Columbian times. Although four-fifths of all milk chocolate is sold in the United States
+                and Europe.</p>
+            </div>
           </li>
           <li class="ingredients-list-item">
             <img class="ingredients-list-img" src="./images/ingredients/milk.png" alt="milk" width="206" height="160" />
             <h3 class="ingredients-list-title">milk</h3>
+            <div class="overlay">
+              <h3 class="overlay-title">milk</h3>
+              <ul class="overlay-tegs-list list">
+                <li class="overlay-tegs-item">
+                  <p class="overlay-tegs-list-text">milk</p>
+                </li>
+                <li class="overlay-tegs-item">
+                  <p class="overlay-tegs-list-text">the benefits</p>
+                </li>
+              </ul>
+              <p class="overlay-text">Milk is a white liquid food produced by the mammary glands of mammals. It is the
+                primary source of nutrition for young
+                mammals (including breastfed human infants) before they are able to digest solid food.Early-lactation
+                milk, which is
+                called colostrum, contains antibodies that strengthen the immune system.</p>
+            </div>
           </li>
           <li class="ingredients-list-item">
             <img class="ingredients-list-img" src="./images/ingredients/nuts.png" alt="nuts" width="206" height="160" />
             <h3 class="ingredients-list-title">nuts</h3>
+            <div class="overlay">
+              <h3 class="overlay-title">Nuts</h3>
+              <ul class="overlay-tegs-list list">
+                <li class="overlay-tegs-item">
+                  <p class="overlay-tegs-list-text">Nuts</p>
+                </li>
+                <li class="overlay-tegs-item">
+                  <p class="overlay-tegs-list-text">the benefits</p>
+                </li>
+              </ul>
+              <p class="overlay-text">Almonds, pistachios, and walnuts are some types of nuts that contain healthy
+                nutrients. When eaten as part of a
+                nutrient-dense diet, these 9 nuts may offer benefits such as reducing your risk of heart disease.
+                They’re a good source
+                of fiber, healthy fats, and plant protein. Plus, they’re great on their own.</p>
+            </div>
           </li>
           <li class="ingredients-list-item">
             <img class="ingredients-list-img" src="./images/ingredients/semi-sweet-choclate.png"
               alt="semi-sweet chocolate" width="206" height="160" />
             <h3 class="ingredients-list-title">semi - sweet chocolate</h3>
+            <div class="overlay">
+              <h3 class="overlay-title">semi - sweet chocolate</h3>
+              <ul class="overlay-tegs-list list">
+                <li class="overlay-tegs-item">
+                  <p class="overlay-tegs-list-text">sweet chocolate</p>
+                </li>
+                <li class="overlay-tegs-item">
+                  <p class="overlay-tegs-list-text">the benefits</p>
+                </li>
+              </ul>
+              <p class="overlay-text">Semi-sweet chocolate has a cocoa solid content of 35 to 65%. One of the best ways
+                to gain an understanding of this type
+                of chocolate is to compare it to a different type of chocolate. Semisweet is darker than milk chocolate.
+                In a taste
+                comparison, it has a slightly bitter taste whereas milk chocolate is sweeter and more mellow.</p>
+            </div>
           </li>
         </ul>
       </div>
@@ -129,30 +216,32 @@
         <h2 class="how-title section-title">
           How it’s <span class="accent-color">made</span>?
         </h2>
-        <img class="how-made-img" src="./images/how-made/how-made.jpg" alt="chocolate making process" width="600"
-          height="400" />
-        <div class="how-made-description">
-          <h3 class="how-made-title">
-            Try our chocolates today and discover the perfect balance of flavor
-          </h3>
-          <ul class="how-made-list">
-            <li class="how-made-list-item">
-              Heat the milk in a saucepan without bringing it to a boil. Add sugar
-              and cocoa powder.
-            </li>
-            <li class="how-made-list-item">
-              At the same time, prepare a water bath. Melt the butter on it.
-            </li>
-            <li class="how-made-list-item">
-              "Mix" the milk mixture and already liquid butter. Mix thoroughly
-              with a silicone spatula so that the mass becomes uniform and silky.
-            </li>
-            <li class="how-made-list-item">Heat the mixture over low heat, letting it barely boil.</li>
-            <li class="how-made-list-item">
-              Pour the chocolate into special containers (can be replaced with ice
-              molds). Allow to cool and harden.
-            </li>
-          </ul>
+        <div class="how-made-content-wrapper">
+          <img class="how-made-img" src="./images/how-made/how-made.jpg" alt="chocolate making process" width="600"
+            height="400" />
+          <div class="how-made-text-wrapper">
+            <h3 class="how-made-list-title">
+              Try our chocolates today and discover the perfect balance of flavor
+            </h3>
+            <ul class="how-made-list">
+              <li class="how-made-list-item">
+                Heat the milk in a saucepan without bringing it to a boil. Add sugar
+                and cocoa powder.
+              </li>
+              <li class="how-made-list-item">
+                At the same time, prepare a water bath. Melt the butter on it.
+              </li>
+              <li class="how-made-list-item">
+                "Mix" the milk mixture and already liquid butter. Mix thoroughly
+                with a silicone spatula so that the mass becomes uniform and silky.
+              </li>
+              <li class="how-made-list-item">Heat the mixture over low heat, letting it barely boil.</li>
+              <li class="how-made-list-item">
+                Pour the chocolate into special containers (can be replaced with ice
+                molds). Allow to cool and harden.
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -160,7 +249,7 @@
     <!-- REVIEWS -->
     <section class="reviews section" id="reviews">
       <div class="container">
-        <h2 class="section-title">
+        <h2 class="reviews-title section-title">
           <span class="accent-color">Chocolate</span> is loved
         </h2>
         <ul class="reviews-list list">
@@ -202,24 +291,26 @@
   <!-- PAGE FOOTER -->
   <footer class="page-footer">
     <div class="container">
-      <div class="page-footer-left-side">
+      <div class="page-footer-top-block">
         <h2 class="page-footer-title">
           <span class="accent-color">Chocolate</span> a delicious cure for a bad
           day
         </h2>
-        <h3 class="contact-title">Contact us</h3>
-        <address>
-          <ul class="contact-list list">
-            <li class="contact-list-item">
-              <a class="contact-list-link link" href="tel:+380684439426">+380 (68) 443-94-26</a>
-            </li>
-            <li class="contact-list-item">
-              <a class="contact-list-link link" href="mailto:simplychoc@gmail.com">simplychoc@gmail.com</a>
-            </li>
-          </ul>
-        </address>
+        <div class="page-footer-contact-block">
+          <h3 class="contact-title">Contact us</h3>
+          <address>
+            <ul class="contact-list list">
+              <li class="contact-list-item">
+                <a class="contact-list-link link" href="tel:+380684439426">+380 (68) 443-94-26</a>
+              </li>
+              <li class="contact-list-item">
+                <a class="contact-list-link link" href="mailto:simplychoc@gmail.com">simplychoc@gmail.com</a>
+              </li>
+            </ul>
+          </address>
+        </div>
       </div>
-      <div class="page-footer-right-side">
+      <div class="page-footer-bottom-block">
         <nav class="page-navigation">
           <ul class="menu list">
             <li class="menu-item">

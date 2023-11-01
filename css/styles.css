@@ -20,7 +20,8 @@ ol {
 
 /* --- т.я. у рядкових елементів є невеличкий відступ, його також скидаємо --- */
 img {
-  display: block; /* саме для цього ставимо, щоб позбавитись відступа */
+  display: block;
+  /* саме для цього ставимо, щоб позбавитись відступа */
 }
 
 /* --- Скинути маркери --- */
@@ -66,7 +67,8 @@ body {
 }
 
 .container {
-  width: 1166px; /* визначається у фігмі по грідам від колонки до колонки */
+  width: 1166px;
+  /* визначається у фігмі по грідам від колонки до колонки */
   margin-left: auto;
   margin-right: auto;
   padding-left: 15px;
@@ -97,28 +99,49 @@ body {
   padding-top: 24px;
   padding-bottom: 32px;
 }
+
+.page-header-container {
+  display: flex;
+  justify-content: space-between;
+  /* для того щоб лого та свг притиснулись до країв */
+}
+
 .page-navigation {
-  display: flex; /* для того, щоб лого та меню були на одній лінії на батьківский елемент задаємо: */
-  align-items: center; /* щоб флекс елементи центрувались по допоміжній осі */
+  display: flex;
+  /* для того, щоб лого та меню були на одній лінії на батьківский елемент задаємо: */
+  align-items: center;
+  /* щоб флекс елементи центрувались по допоміжній осі */
   justify-content: space-between;
   width: 100%;
-  min-width: 980px; /* максимальна ширина до якої може розтягнутись (вимірювалось від початку лого до кінця меню навігації) */
+  max-width: 980px;
+  /* максимальна ширина до якої може розтягнутись (вимірювалось від початку лого до кінця меню навігації) */
 }
 
 /* --- Logo --- */
 .logo {
+  display: flex;
+  align-items: center;
+  /* 2 рядки вище для вирівнювання свг лого */
   font-size: 18px;
   font-weight: 700;
-  line-height: 1.11; /* line-height 24px : font-size: 18px = 1.11 */
-  letter-spacing: -0.03em; /* letter-spacing : font-size, т.е. -0.54px : 18px = -0.03em */
+  line-height: 1.11;
+  /* line-height 24px : font-size: 18px = 1.11 */
+  letter-spacing: -0.03em;
+  /* letter-spacing : font-size, т.е. -0.54px : 18px = -0.03em */
 
   color: #111111;
 }
 
+.logo-icon {
+  margin-left: 4px;
+}
+
 /* --- Menu --- */
 .menu {
-  display: flex; /* щоб встали в один рядок (задається батьківскому елементу)*/
-  column-gap: 24px; /* gap - працює тільки для флекс елементів, задається на батьківскій елемент */
+  display: flex;
+  /* щоб встали в один рядок (задається батьківскому елементу)*/
+  column-gap: 24px;
+  /* gap - працює тільки для флекс елементів, задається на батьківскій елемент */
 }
 
 .menu-link {
@@ -126,6 +149,7 @@ body {
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: -0.02em;
+  transition: color 250ms linear;
 
   color: #111111;
 }
@@ -134,25 +158,85 @@ body {
 .menu-link:focus {
   color: #fd9222;
 }
+
+.social-list {
+  display: flex;
+  column-gap: 18px;
+}
+
+.social-list-link {
+  display: block;
+  /* т.я. посилання це рядковий елемент, для коректного відображення іконки задаємо дісплей блок */
+  /* щоб посилання було по висоті іконки задаємо (прибираємо міжрядковий інтервал): */
+  line-height: 0;
+}
+
+.social-list-icon {
+  fill: none;
+  /* прибрати заливку с свг, т.я. вони повністю чорні були */
+  stroke: #111111;
+  /* за допомогою stroke фарбуємо лінії з яких створені свг */
+  transition: stroke 250ms linear;
+  /* transition прописуємо тому елементу, у якого змінюється значення властивості */
+}
+
+/* 
+.social-list-icon:hover {
+  stroke: #FD9222;} */
+/* фокус задати не можемо, тому що його можна 
+  задавати тільки на інтерактивні елементи 
+  (посилання, кнопки, елементи форм), але його зробити можна через посилання: */
+.social-list-link:hover .social-list-icon,
+.social-list-link:focus .social-list-icon {
+  stroke: #FD9222;
+}
+
 /* ======== /HEADER ======== */
 
 /* ======== HERO ======== */
+.hero {
+  max-width: 1136px;
+  padding-top: 381px;
+  padding-bottom: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 30px;
+  background: rgba(17, 17, 17, 0.6);
+  background-image:
+    linear-gradient(rgba(17, 17, 17, 0.40),
+      rgba(17, 17, 17, 0.40)),
+    url(../images/hero/chocolate-bg.jpeg);
+  block-size: cover;
+  /* якщо у подальшому змінеться розмір БГ, воно буде розтягуватись і буде повністю заповнювати секцію */
+}
+
 .main-title {
+  max-width: 470px;
   font-size: 28px;
   font-weight: 500;
   line-height: 1.21;
   letter-spacing: -0.03em;
-
+  margin-bottom: 32px;
   color: #ffffff;
 }
 
+.hero-bottom-block {
+  display: flex;
+  align-items: center;
+}
+
 .buy-now-btn {
-  font-family: inherit;
+  min-width: 144px;
+  height: 45px;
   font-size: 14px;
   font-weight: 600;
+  margin-right: 14px;
   border-radius: 100px;
-  background-color: #fd9222;
+  border: none;
 
+  background-color: #fd9222;
   color: #ffffff;
 }
 
@@ -163,25 +247,32 @@ body {
 }
 
 .how-made-link {
+  display: flex;
+  align-items: center;
+  min-width: 183px;
+  height: 45px;
   font-size: 14px;
   font-weight: 600;
+  padding-left: 40px;
+  padding-right: 40px;
   border-radius: 100px;
   border: 1px solid #ffffff;
-
   color: #ffffff;
 }
 
 .how-made-link:hover,
 .how-made-link:focus {
   color: #fd9222;
+  border-color: #fd9222;
 }
 
 .scroll-down-link {
+  display: block;
   font-size: 14px;
   font-weight: 500;
   line-height: 1.29;
   letter-spacing: -0.03em;
-
+  margin-left: auto;
   color: #ffffff;
 }
 
@@ -189,12 +280,34 @@ body {
 .scroll-down-link:focus {
   color: #fd9222;
 }
+
 /* ======== /HERO ======== */
 
 /* ======== BENEFITS ======== */
+.benefits {
+  margin-top: 72px;
+  margin-bottom: 50px;
+  background-color: #1e1823;
+}
+
+.benefits-container {
+  padding-left: 34px;
+  padding-right: 34px;
+}
+
+.benefits-list {
+  display: flex;
+  column-gap: 88px;
+}
+
+.benefits-list-item {
+  width: calc((100% - 196px) / 3);
+}
+
 .benefits-list-title {
   font-size: 18px;
   font-weight: 600;
+  margin-bottom: 18px;
 
   color: #ffffff;
 }
@@ -207,11 +320,13 @@ body {
 
   color: rgba(255, 255, 255, 0.7);
 }
+
 /* ======== /BENEFITS ======== */
 
 /* ======== INGREDIENTS ======== */
 .ingredients-title {
-  width: 411px; /* для того, щоб було перенесення у заголовка, обмежуємо по ширині */
+  width: 411px;
+  /* для того, щоб було перенесення у заголовка, обмежуємо по ширині */
   margin-left: auto;
   margin-right: auto;
   /* для того, щоб відцентрувати блочний елемент, використовуємо автоматичні марджини, text-align не допоможе */
@@ -221,6 +336,7 @@ body {
 .ingredients-description {
   font-size: 14px;
   font-weight: 400;
+  font-style: normal;
   line-height: 1.29;
   letter-spacing: -0.02em;
   text-align: center;
@@ -235,10 +351,14 @@ body {
 
 .ingredients-list {
   display: flex;
+  flex-wrap: wrap;
+  /* якщо додадуть ще картки, вони пересунуться на слідуючий рядок */
   gap: 19px;
 }
 
 .ingredients-list-item {
+  /* для того, щоб спозіціунувати картку overlay */
+  position: relative;
   /* 100% - width батьківського елемента
   3 - кількість проміжків
   19px - розмір проміжку між картками
@@ -251,6 +371,9 @@ body {
   padding-left: 28px;
   padding-right: 36px;
   border: 1px solid #fd9222;
+  /* "весь контент, який вилізає - приховуй" */
+  overflow: hidden;
+
 }
 
 .ingredients-list-item:nth-child(4n + 1) {
@@ -286,19 +409,106 @@ body {
   letter-spacing: -0.02em;
   text-transform: uppercase;
 }
+
+.overlay {
+  /* щоб елемент був по розміру картки від якої позиціонується */
+  height: 100%;
+  /* коли одна карточка поверх другої, одразу думаємо про absolute */
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 15px;
+  padding: 20px;
+  color: #111111;
+  background-color: #ffffff;
+  /* якщо буде переповнення контенту, зʼявиться скрол */
+  overflow: auto;
+  transition: transform 250ms linear;
+  /* щоб сховати оверлей: */
+  transform: translateY(100%);
+}
+
+.ingredients-list-item:hover .overlay {
+  transform: translateY(0%);
+}
+
+.overlay-title {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+
+  color: #111111;
+}
+
+.overlay-tegs-list {
+  display: flex;
+  column-gap: 6px;
+  margin-bottom: 14px;
+}
+
+/* звертаємось до непарних ли */
+.overlay-tegs-item:nth-child(odd) .overlay-tegs-list-text {
+  background-color: #FD9222;
+  color: #ffffff;
+}
+
+/* до парних ли  */
+.overlay-tegs-item:nth-child(even) .overlay-tegs-list-text {
+  background-color: #fafafa;
+}
+
+.overlay-tegs-list-text {
+  display: flex;
+  height: 24px;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1.2;
+  border-radius: 35px;
+  padding-left: 16px;
+  padding-right: 16px;
+  align-items: center;
+  border: 1px solid #FD9222;
+}
+
+.overlay-text {
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.02em;
+}
+
 /* ======== /INGREDIENTS ======== */
 
 /* ======== HOW IT`S MADE ======== */
+.how-made-content-wrapper {
+  display: flex;
+  column-gap: 20px;
+}
+
+.how-made-text-wrapper {
+  flex-grow: 1;
+  padding: 32px;
+  border-radius: 15px;
+  background-color: #ffffff;
+}
+
 .how-title {
   margin-bottom: 50px;
 }
 
-.how-made-title {
+.how-made-list-title {
+  max-width: 350px;
   font-size: 18px;
   font-weight: 600;
   line-height: 1.33;
+  margin-bottom: 32px;
 
   color: #111111;
+}
+
+.how-made-list {
+  padding-right: 26px;
 }
 
 .how-made-list-item {
@@ -309,9 +519,36 @@ body {
 
   color: #111111;
 }
+
+.how-made-list-item:not(:last-child) {
+  margin-bottom: 24px;
+}
+
 /* ======== /OW IT`S MADE ======== */
 
 /* ======== REVIEWS ======== */
+.reviews-title {
+  margin-bottom: 50px;
+}
+
+.reviews-list {
+  display: flex;
+  column-gap: 28px;
+  margin-bottom: 50px;
+}
+
+.reviews-list-item {
+  width: calc((100% - 56px) / 3);
+  padding-top: 56px;
+  padding-right: 24px;
+  padding-bottom: 24px;
+  padding-left: 24px;
+  border: 1px solid rgba(17, 17, 17, 0.1);
+  border-radius: 15px;
+  background-color: #ffffff;
+  box-shadow: 0px 9.05px 100px 0px rgba(17, 17, 17, 0.03);
+}
+
 .reviews-list-fullname {
   text-align: center;
   font-size: 18px;
@@ -332,11 +569,18 @@ body {
 }
 
 .leave-review-btn {
+  display: block;
+  width: 222px;
   font-size: 18px;
   font-weight: 600;
-  color: #111111;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  margin-left: auto;
+  margin-right: auto;
   border-radius: 100px;
   border: 1px solid #fd9222;
+  color: #111111;
+  background-color: #ffffff;
 }
 
 .leave-review-btn:hover,
@@ -344,14 +588,28 @@ body {
   color: #ffffff;
   background-color: #fd9222;
 }
+
 /* ======== /OREVIEWS ======== */
 
 /* ======== FOOTER ======== */
+.page-footer {
+  background-color: #1e1823;
+}
+
+.page-footer-top-block {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 50px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 .page-footer-title {
+  width: 300px;
   font-size: 28px;
   font-weight: 500;
   line-height: 1.21;
   letter-spacing: -0.02em;
+  color: #ffffff;
 }
 
 .contact-title {
@@ -359,6 +617,7 @@ body {
   font-weight: 500;
   line-height: 1.29;
   text-align: center;
+  margin-bottom: 14px;
 
   color: #ffffff;
 }
@@ -371,4 +630,17 @@ body {
   letter-spacing: -0.02em;
   text-align: center;
 }
+
+.contact-list-item:not(:last-child) {
+  margin-bottom: 4px;
+}
+
+.page-footer-bottom-block {
+  padding-top: 24px;
+}
+
+.page-footer-menu {
+  color: #ffffff;
+}
+
 /* ======== /FOOTER ======== */
