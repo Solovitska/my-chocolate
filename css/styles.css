@@ -18,17 +18,19 @@ ol {
   padding-left: 0;
 }
 
-/* --- т.я. у рядкових елементів є невеличкий відступ, його також скидаємо --- */
+/* --- у рядкових елементів є невеличкий відступ, 
+його також скидаємо --- */
 img {
   display: block;
-  /* саме для цього ставимо, щоб позбавитись відступа */
+  /* саме для цього ставимо,
+    щоб позбавитись відступа */
 }
 
 /* --- Скинути маркери --- */
 /* ul,
 ol {
   list-style-type: none;
-} */
+} або зробити це через клас*/
 .list {
   list-style-type: none;
 }
@@ -46,7 +48,8 @@ button {
   cursor: pointer;
 }
 
-/* приховати заголовок візуально, але для пошукових систем та скрін рідерів він не приховується */
+/* приховати заголовок візуально, але для пошукових 
+систем та скрін рідерів він не приховується */
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -67,12 +70,14 @@ body {
 }
 
 .container {
-  width: 1166px;
-  /* визначається у фігмі по грідам від колонки до колонки */
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 15px;
-  padding-right: 15px;
+  /* робимо напівгумовий контейнер, ширину
+ вказувати не потрібно, а т.я. нічого центрувати
+ прибрали марджини (зараз він повністю гумовий, але 
+ нижче додаємо медіа правило, яке і зробить його 
+ напів гумовим) */
+  padding-left: 16px;
+  padding-right: 16px;
+  /* щоб контент не приліпав до країв контейнера */
 }
 
 .section {
@@ -82,6 +87,8 @@ body {
 
 .accent-color {
   color: #fd9222;
+  /* винисли окремо, щоб
+  закрашувати в акцентний колір */
 }
 
 .section-title {
@@ -94,38 +101,114 @@ body {
   color: #111111;
 }
 
-/* ======== HEADER ======== */
+/* ============== /COMMON STYLES ============== */
+
+/* Якщо у користувача ширина 480рх, то контейнер 
+зафіксуємо */
+@media screen and (min-width: 480px) {
+  .container {
+    width: 367px;
+    /* ширина визначається у фігмі по грідам від 
+      колонки до колонки. 
+      В mob/tab версії не було вказано падінги, тому 
+      додали їх до ширини (335рх + (16рх + 16рх)) = 367рх */
+    margin-left: auto;
+    margin-right: auto;
+    /* марджини для того, щоб не приліпав контент до країв */
+  }
+}
+
+/* Це медіа для того, щоб на таблет версії не
+підтягувались стилі від мобільного меню */
+@media screen and (max-width: 767px) {
+  .mobile-open-btn {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    line-height: 0;
+    /* line-height є у кожного елемента, щоб розмір був такий як треба, ставимо йому 0 */
+    /* прибрали зайві стандартні елементи */
+  }
+
+  .mobile-open-btn-icon {
+    stroke: #111111;
+  }
+
+  .mobile-menu {
+    position: fixed;
+    /* витягуємо елемент, позіціонується від вьюпорта */
+    top: 0;
+    left: 0;
+    /* притискаємо до верхнього лівого кута */
+    width: 100%;
+    height: 100%;
+    /* розтягуємо на всю ширину та висоту вьюпорта */
+    z-index: 9999999;
+    background-color: #1E1823;
+
+    /* приховуємо моб. меню, робимо, шоб воно виїзджало */
+    transform: translateX(100%);
+    /* ховається на 100% ширини вьюпорта */
+    transition: transform 250ms linear;
+  }
+
+  .mobile-menu.is-open {
+    transform: translateX(0%);
+  }
+
+  .mobile-menu-container {
+    position: relative;
+    /* щоб кнопка позіціонувалася від контейнеру, 
+  а не від .mobile-menu */
+  }
+
+  .mobile-menu-close-btn {
+    position: absolute;
+    /* виймаємо з потоку, щоб вона не заважала контенту */
+    top: 0;
+    right: 0;
+    /* правим верхім кутом притискаємо до рамки*/
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    line-height: 0;
+    stroke: #ffffff;
+  }
+}
+
+/* ============== HEADER Mobile ============== */
 .page-header {
-  padding-top: 24px;
-  padding-bottom: 32px;
+  padding-top: 20px;
+  padding-bottom: 18px;
 }
 
 .page-header-container {
   display: flex;
-  justify-content: space-between;
-  /* для того щоб лого та свг притиснулись до країв */
-}
-
-.page-navigation {
-  display: flex;
-  /* для того, щоб лого та меню були на одній лінії на батьківский елемент задаємо: */
+  /* для того, щоб поставити бургер на рівні з лого. 
+  Флекс дається на батьківський елемент */
   align-items: center;
-  /* щоб флекс елементи центрувались по допоміжній осі */
+  /* вирівнюємо по допоміжній осі */
   justify-content: space-between;
-  width: 100%;
-  max-width: 980px;
-  /* максимальна ширина до якої може розтягнутись (вимірювалось від початку лого до кінця меню навігації) */
+  /* розділяємо елементи */
 }
 
-/* --- Logo --- */
+.menu {
+  display: none;
+  /* скриваємо непотрібне */
+}
+
+.social-list {
+  display: none;
+  /* скриваємо непотрібне */
+}
+
 .logo {
   display: flex;
-  align-items: center;
+  text-align: center;
   /* 2 рядки вище для вирівнювання свг лого */
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 700;
-  line-height: 1.11;
-  /* line-height 24px : font-size: 18px = 1.11 */
+  line-height: 1.29;
   letter-spacing: -0.03em;
   /* letter-spacing : font-size, т.е. -0.54px : 18px = -0.03em */
 
@@ -136,70 +219,12 @@ body {
   margin-left: 4px;
 }
 
-/* --- Menu --- */
-.menu {
-  display: flex;
-  /* щоб встали в один рядок (задається батьківскому елементу)*/
-  column-gap: 24px;
-  /* gap - працює тільки для флекс елементів, задається на батьківскій елемент */
-}
+/* ============== /HEADER Mobile ============== */
 
-.menu-link {
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1.14;
-  letter-spacing: -0.02em;
-  transition: color 250ms linear;
-
-  color: #111111;
-}
-
-.menu-link:hover,
-.menu-link:focus {
-  color: #fd9222;
-}
-
-.social-list {
-  display: flex;
-  column-gap: 18px;
-}
-
-.social-list-link {
-  display: block;
-  /* т.я. посилання це рядковий елемент, для коректного відображення іконки задаємо дісплей блок */
-  /* щоб посилання було по висоті іконки задаємо (прибираємо міжрядковий інтервал): */
-  line-height: 0;
-}
-
-.social-list-icon {
-  fill: none;
-  /* прибрати заливку с свг, т.я. вони повністю чорні були */
-  stroke: #111111;
-  /* за допомогою stroke фарбуємо лінії з яких створені свг */
-  transition: stroke 250ms linear;
-  /* transition прописуємо тому елементу, у якого змінюється значення властивості */
-}
-
-/* 
-.social-list-icon:hover {
-  stroke: #FD9222;} */
-/* фокус задати не можемо, тому що його можна 
-  задавати тільки на інтерактивні елементи 
-  (посилання, кнопки, елементи форм), але його зробити можна через посилання: */
-.social-list-link:hover .social-list-icon,
-.social-list-link:focus .social-list-icon {
-  stroke: #FD9222;
-}
-
-/* ======== /HEADER ======== */
-
-/* ======== HERO ======== */
+/* ============== HERO Mobile ============== */
 .hero {
-  max-width: 1136px;
-  padding-top: 381px;
-  padding-bottom: 40px;
-  padding-left: 40px;
-  padding-right: 40px;
+  max-width: 335px;
+  padding: 395px 16px 21px 20px;
   margin-left: auto;
   margin-right: auto;
   border-radius: 30px;
@@ -207,18 +232,30 @@ body {
   background-image:
     linear-gradient(rgba(17, 17, 17, 0.40),
       rgba(17, 17, 17, 0.40)),
-    url(../images/hero/chocolate-bg.jpeg);
-  block-size: cover;
+    url(../images/hero/chocolate-bg-mob.jpg);
+  background-size: cover;
   /* якщо у подальшому змінеться розмір БГ, воно буде розтягуватись і буде повністю заповнювати секцію */
 }
 
+@media screen and (min-resolution: 192dpi),
+screen and (min-resolution: 2dppx),
+screen and (min-device-pixel-ratio: 2) {
+  .hero {
+    background-image:
+      linear-gradient(rgba(17, 17, 17, 0.40),
+        rgba(17, 17, 17, 0.40)),
+      url(../images/hero/chocolate-bg-mob@2x.jpg);
+  }
+}
+
 .main-title {
-  max-width: 470px;
-  font-size: 28px;
+  max-width: 295px;
+  font-size: 20px;
   font-weight: 500;
-  line-height: 1.21;
+  line-height: 1.2;
   letter-spacing: -0.03em;
   margin-bottom: 32px;
+
   color: #ffffff;
 }
 
@@ -228,8 +265,8 @@ body {
 }
 
 .buy-now-btn {
-  min-width: 144px;
-  height: 45px;
+  min-width: 120px;
+  height: 41px;
   font-size: 14px;
   font-weight: 600;
   margin-right: 14px;
@@ -238,6 +275,8 @@ body {
 
   background-color: #fd9222;
   color: #ffffff;
+
+  transition: background-color 250ms linear, color 250ms linear;
 }
 
 .buy-now-btn:hover,
@@ -249,59 +288,75 @@ body {
 .how-made-link {
   display: flex;
   align-items: center;
-  min-width: 183px;
-  height: 45px;
+  justify-content: center;
+  min-width: 159px;
+  height: 41px;
   font-size: 14px;
   font-weight: 600;
-  padding-left: 40px;
-  padding-right: 40px;
   border-radius: 100px;
   border: 1px solid #ffffff;
   color: #ffffff;
 }
 
-.how-made-link:hover,
-.how-made-link:focus {
-  color: #fd9222;
-  border-color: #fd9222;
-}
+
 
 .scroll-down-link {
-  display: block;
-  font-size: 14px;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
   font-weight: 500;
-  line-height: 1.29;
+  line-height: 1.17;
   letter-spacing: -0.03em;
-  margin-left: auto;
+  column-gap: 14px;
+  transition: color 250ms linear;
+
   color: #ffffff;
 }
 
-.scroll-down-link:hover,
-.scroll-down-link:focus {
-  color: #fd9222;
+
+.scroll-down-icon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  fill: #fd9222;
+  transition: background-color 250ms linear, fill 250ms linear;
 }
 
-/* ======== /HERO ======== */
+/* ============== /HERO Mobile ============== */
 
-/* ======== BENEFITS ======== */
+/* ============== BENEFITS Mobile ============== */
 .benefits {
-  margin-top: 72px;
-  margin-bottom: 50px;
+  margin-top: 42px;
+  margin-bottom: 20px;
   background-color: #1e1823;
 }
 
 .benefits-container {
-  padding-left: 34px;
-  padding-right: 34px;
-}
-
-.benefits-list {
-  display: flex;
-  column-gap: 88px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .benefits-list-item {
-  width: calc((100% - 196px) / 3);
+  margin-bottom: 20px;
+}
+
+.benefits-list-item:last-child {
+  margin-bottom: 0;
+}
+
+.benefits-list-item-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 62px;
+  height: 62px;
+  margin-bottom: 22px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.50);
 }
 
 .benefits-list-title {
@@ -315,551 +370,289 @@ body {
 .benefits-list-text {
   font-size: 14px;
   font-weight: 400;
-  line-height: 1.29;
   letter-spacing: -0.02em;
 
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.70);
 }
 
-/* ======== /BENEFITS ======== */
+/* ============== /BENEFITS Mobile ============== */
 
-/* ======== INGREDIENTS ======== */
-.ingredients-title {
-  width: 411px;
-  /* для того, щоб було перенесення у заголовка, обмежуємо по ширині */
-  margin-left: auto;
-  margin-right: auto;
-  /* для того, щоб відцентрувати блочний елемент, використовуємо автоматичні марджини, text-align не допоможе */
-  margin-bottom: 28px;
+/* --------- TABLET --------- */
+@media screen and (min-width: 768px) {
+  .container {
+    width: 736px;
+    /* 704рх+(16рх + 16рх))=736рх */
+  }
+
+  /* ============== HEADER Tablet ============== */
+  /* приховуємо кнопку бургера */
+  .mobile-open-btn {
+    display: none;
+  }
+
+  /* приховуємо моб. меню */
+  .mobile-menu {
+    display: none;
+  }
+
+  .page-header {
+    padding-top: 24px;
+    padding-bottom: 32px;
+  }
+
+  .page-header-container {
+    display: flex;
+    justify-content: space-between;
+    /* для того щоб лого та свг притиснулись до країв */
+  }
+
+  .page-navigation {
+    display: flex;
+    /* для того, щоб лого та меню були на одній лінії на батьківский елемент задаємо: */
+    align-items: center;
+    /* щоб флекс елементи центрувались по допоміжній осі */
+    justify-content: space-between;
+    width: 100%;
+    max-width: 590px;
+    /* максимальна ширина до якої може розтягнутись (вимірювалось від початку лого до кінця меню навігації) */
+  }
+
+  .menu {
+    display: flex;
+    /* вже зʼявляється */
+    column-gap: 24px;
+  }
+
+  .menu-link {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.14;
+    letter-spacing: -0.02em;
+    transition: color 250ms linear;
+
+    color: #111111;
+  }
+
+  .menu-link:hover,
+  .menu-link:focus {
+    color: #fd9222;
+  }
+
+  .social-list {
+    display: flex;
+    /* вже зʼявляється */
+    align-items: center;
+    column-gap: 18px;
+  }
+
+  .social-list-icon {
+    fill: none;
+    /* прибрати заливку с свг, т.я. вони повністю чорні були */
+    stroke: #111111;
+    /* за допомогою stroke фарбуємо лінії з яких створені свг */
+    transition: stroke 250ms linear;
+    /* transition прописуємо тому елементу, у якого змінюється значення властивості */
+  }
+
+  .social-list-link {
+    display: block;
+    /* т.я. посилання це рядковий елемент, для коректного відображення іконки задаємо дісплей блок */
+    /* щоб посилання було по висоті іконки задаємо (прибираємо міжрядковий інтервал): */
+    line-height: 0;
+  }
+
+  /* 
+.social-list-icon:hover {
+  stroke: #FD9222;} */
+  /* фокус задати не можемо, тому що його можна 
+  задавати тільки на інтерактивні елементи 
+  (посилання, кнопки, елементи форм), але його зробити можна через посилання: */
+  .social-list-link:hover .social-list-icon,
+  .social-list-link:focus .social-list-icon {
+    stroke: #FD9222;
+  }
+
+  /* ============== /HEADER Tablet ============== */
+
+  /* ============== HERO Tablet ============== */
+  .hero {
+    max-width: 704px;
+    padding: 671px 40px 40px 40px;
+    background-image:
+      linear-gradient(rgba(17, 17, 17, 0.40),
+        rgba(17, 17, 17, 0.40)),
+      url(../images/hero/chocolate-bg-tab.jpg);
+    background-size: cover;
+    /* якщо у подальшому змінеться розмір БГ, воно буде розтягуватись і буде повністю заповнювати секцію */
+  }
+
+  @media screen and (min-resolution: 192dpi),
+  screen and (min-resolution: 2dppx),
+  screen and (min-device-pixel-ratio: 2) {
+    .hero {
+      background-image:
+        linear-gradient(rgba(17, 17, 17, 0.40),
+          rgba(17, 17, 17, 0.40)),
+        url(../images/hero/chocolate-bg-tab@2x.jpg);
+    }
+  }
+
+  .main-title {
+    max-width: 484px;
+    font-size: 28px;
+    line-height: 1.21;
+
+    color: #ffffff;
+  }
+
+  .buy-now-btn {
+    min-width: 144px;
+    height: 45px;
+    font-size: 14px;
+  }
+
+  .how-made-link {
+    min-width: 183px;
+    height: 45px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .how-made-link:hover,
+  .how-made-link:focus {
+    color: #fd9222;
+    border-color: #fd9222;
+  }
+
+  .scroll-down-link {
+    font-size: 14px;
+    line-height: 1.29;
+    margin-left: auto;
+  }
+
+  .scroll-down-icon-wrapper {
+    width: 38px;
+    height: 38px;
+  }
+
+  .scroll-down-link:hover,
+  .scroll-down-link:focus {
+    color: #fd9222;
+  }
+
+  .scroll-down-link:hover .scroll-down-icon-wrapper {
+    background-color: #fd9222;
+    fill: #ffffff;
+  }
+
+  /* ============== /HERO Tablet ============== */
+
+  /* ============== BENEFITS Tablet ============== */
+  .benefits {
+    margin-top: 72px;
+    margin-bottom: 50px;
+  }
+
+  .benefits-container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .benefits-list {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 60px;
+  }
+
+  .benefits-list-item {
+    margin-bottom: 32px;
+    width: calc((100% - 60px) / 2);
+  }
+
+  .benefits-list-item:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ============== /BENEFITS Tablet ============== */
+
 }
 
-.ingredients-description {
-  font-size: 14px;
-  font-weight: 400;
-  font-style: normal;
-  line-height: 1.29;
-  letter-spacing: -0.02em;
-  text-align: center;
-  width: 486px;
-  margin-left: auto;
-  margin-right: auto;
-  /* тому, що блоковий елемент */
-  margin-bottom: 50px;
+/* --------- DESCTOP --------- */
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 1168px;
+  }
 
-  color: #111111;
+  /* ============== HEADER Desctop ============== */
+  .logo {
+    font-size: 18px;
+    line-height: 1.11;
+    /* line-height 24px : font-size: 18px = 1.11 */
+  }
+
+  .page-navigation {
+    max-width: 980px;
+  }
+
+  /* ============== /HEADER Desctop ============== */
+
+  /* ============== HERO Desctop ============== */
+
+  .hero {
+    max-width: 1136px;
+    padding: 381px 40px 40px 40px;
+    background-image:
+      linear-gradient(rgba(17, 17, 17, 0.40),
+        rgba(17, 17, 17, 0.40)),
+      url(../images/hero/chocolate-bg.jpeg);
+    background-size: cover;
+    /* якщо у подальшому змінеться розмір БГ, воно буде розтягуватись і буде повністю заповнювати секцію */
+  }
+
+  @media screen and (min-resolution: 192dpi),
+  screen and (min-resolution: 2dppx),
+  screen and (min-device-pixel-ratio: 2) {
+    .hero {
+      background-image:
+        linear-gradient(rgba(17, 17, 17, 0.40),
+          rgba(17, 17, 17, 0.40)),
+        url(../images/hero/chocolate-bg@2x.jpg);
+    }
+  }
+
+  /* ============== /HERO Desctop ============== */
+
+  /* ============== BENEFITS Desctop ============== */
+
+  .benefits-container {
+    padding-left: 34px;
+    padding-right: 34px;
+  }
+
+  .benefits-list {
+    flex-wrap: nowrap;
+    column-gap: 88px;
+  }
+
+  .benefits-list-item {
+    position: relative;
+    margin-bottom: 0;
+    width: calc((100% - 196px) / 3);
+  }
+
+  .benefits-list-item:not(:last-child)::before {
+    content: " ";
+    position: absolute;
+    right: -18px;
+    transform: translateY(50%);
+    width: 1px;
+    height: 124px;
+    background-color: rgba(255, 255, 255, 0.50);
+  }
+
+  .benefits-list-text {
+    line-height: 1.29;
+  }
+
+  /* ============== /BENEFITS Desctop ============== */
 }
-
-.ingredients-list {
-  display: flex;
-  flex-wrap: wrap;
-  /* якщо додадуть ще картки, вони пересунуться на слідуючий рядок */
-  gap: 19px;
-}
-
-.ingredients-list-item {
-  /* для того, щоб спозіціунувати картку overlay */
-  position: relative;
-  /* 100% - width батьківського елемента
-  3 - кількість проміжків
-  19px - розмір проміжку між картками
-  4 - кількість карток
-  це робиться замість фіксованної ширини, для подальшого для адаптивності, карточки будуть підлаштовуватись */
-  width: calc((100% - 3 * 19px) / 4);
-  border-radius: 15px;
-  padding-top: 28px;
-  padding-bottom: 28px;
-  padding-left: 28px;
-  padding-right: 36px;
-  border: 1px solid #fd9222;
-  /* "весь контент, який вилізає - приховуй" */
-  overflow: hidden;
-
-}
-
-.ingredients-list-item:nth-child(4n + 1) {
-  background-color: #fd9222;
-  color: #ffffff;
-}
-
-/* 
-4n + 3
-4 * 0 + 3 = 3;
-4 * 1 + 3 = 7;
-4 * 2 + 3 = 11;
-*/
-.ingredients-list-item:nth-child(4n + 3) {
-  background-color: #1e1823;
-  border-color: #1e1823;
-  color: #ffffff;
-}
-
-/* всім парним елементам */
-.ingredients-list-item:nth-child(even) {
-  background-color: #ffffff;
-}
-
-.ingredients-list-img {
-  margin-bottom: 36px;
-}
-
-.ingredients-list-title {
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1.29;
-  letter-spacing: -0.02em;
-  text-transform: uppercase;
-}
-
-.overlay {
-  /* щоб елемент був по розміру картки від якої позиціонується */
-  height: 100%;
-  /* коли одна карточка поверх другої, одразу думаємо про absolute */
-  position: absolute;
-  top: 0;
-  left: 0;
-  border-radius: 15px;
-  padding: 20px;
-  color: #111111;
-  background-color: #ffffff;
-  /* якщо буде переповнення контенту, зʼявиться скрол */
-  overflow: auto;
-  transition: transform 250ms linear;
-  /* щоб сховати оверлей: */
-  transform: translateY(100%);
-}
-
-.ingredients-list-item:hover .overlay {
-  transform: translateY(0%);
-}
-
-.overlay-title {
-  font-size: 18px;
-  font-weight: 600;
-  letter-spacing: -0.03em;
-  text-transform: uppercase;
-  margin-bottom: 8px;
-
-  color: #111111;
-}
-
-.overlay-tegs-list {
-  display: flex;
-  column-gap: 6px;
-  margin-bottom: 14px;
-}
-
-/* звертаємось до непарних ли */
-.overlay-tegs-item:nth-child(odd) .overlay-tegs-list-text {
-  background-color: #FD9222;
-  color: #ffffff;
-}
-
-/* до парних ли  */
-.overlay-tegs-item:nth-child(even) .overlay-tegs-list-text {
-  background-color: #fafafa;
-}
-
-.overlay-tegs-list-text {
-  display: flex;
-  height: 24px;
-  font-size: 10px;
-  font-weight: 400;
-  line-height: 1.2;
-  border-radius: 35px;
-  padding-left: 16px;
-  padding-right: 16px;
-  align-items: center;
-  border: 1px solid #FD9222;
-}
-
-.overlay-text {
-  font-size: 14px;
-  line-height: 1.29;
-  letter-spacing: -0.02em;
-}
-
-/* ======== /INGREDIENTS ======== */
-
-/* ======== HOW IT`S MADE ======== */
-.how-made-content-wrapper {
-  display: flex;
-  column-gap: 20px;
-}
-
-.how-made-text-wrapper {
-  flex-grow: 1;
-  padding: 32px;
-  border-radius: 15px;
-  background-color: #ffffff;
-}
-
-.how-title {
-  margin-bottom: 50px;
-}
-
-.how-made-list-title {
-  max-width: 350px;
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 1.33;
-  margin-bottom: 32px;
-
-  color: #111111;
-}
-
-.how-made-list {
-  padding-right: 26px;
-}
-
-.how-made-list-item {
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.29;
-  letter-spacing: -0.02em;
-
-  color: #111111;
-}
-
-.how-made-list-item:not(:last-child) {
-  margin-bottom: 24px;
-}
-
-/* ======== /OW IT`S MADE ======== */
-
-/* ======== REVIEWS ======== */
-.reviews-title {
-  margin-bottom: 50px;
-}
-
-.reviews-list {
-  display: flex;
-  column-gap: 28px;
-  margin-bottom: 50px;
-}
-
-.reviews-list-item {
-  width: calc((100% - 56px) / 3);
-  padding-top: 56px;
-  padding-right: 24px;
-  padding-bottom: 24px;
-  padding-left: 24px;
-  border: 1px solid rgba(17, 17, 17, 0.1);
-  border-radius: 15px;
-  background-color: #ffffff;
-  box-shadow: 0px 9.05px 100px 0px rgba(17, 17, 17, 0.03);
-}
-
-.reviews-list-fullname {
-  text-align: center;
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 1.33;
-
-  color: #111111;
-}
-
-.reviews-list-text {
-  text-align: center;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.29;
-  letter-spacing: -0.28px;
-
-  color: rgba(17, 17, 17, 0.7);
-}
-
-.leave-review-btn {
-  display: block;
-  width: 222px;
-  font-size: 18px;
-  font-weight: 600;
-  padding-top: 14px;
-  padding-bottom: 14px;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 100px;
-  border: 1px solid #fd9222;
-  color: #111111;
-  background-color: #ffffff;
-}
-
-.leave-review-btn:hover,
-.leave-review-btn:focus {
-  color: #ffffff;
-  background-color: #fd9222;
-}
-
-/* ======== /OREVIEWS ======== */
-
-/* ======== FOOTER ======== */
-.page-footer {
-  background-color: #1e1823;
-}
-
-.page-footer-top-block {
-  display: flex;
-  justify-content: space-between;
-  padding-bottom: 50px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.page-footer-title {
-  width: 300px;
-  font-size: 28px;
-  font-weight: 500;
-  line-height: 1.21;
-  letter-spacing: -0.02em;
-  color: #ffffff;
-}
-
-.contact-title {
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1.29;
-  text-align: center;
-  margin-bottom: 14px;
-
-  color: #ffffff;
-}
-
-.contact-list-link {
-  font-size: 14px;
-  font-weight: 400;
-  font-style: normal;
-  line-height: 1.29;
-  letter-spacing: -0.02em;
-  text-align: center;
-}
-
-.contact-list-item:not(:last-child) {
-  margin-bottom: 4px;
-}
-
-.page-footer-bottom-block {
-  padding-top: 24px;
-}
-
-.page-footer-menu {
-  color: #ffffff;
-}
-
-/* ======== /FOOTER ======== */
-
-/* ======== BACKDROP ======== */
-.backdrop {
-  /* виймаємо бєкдроп */
-  position: fixed;
-  /* притискаємо до верхнього лівого кута */
-  top: 0;
-  left: 0;
-  /* робимо на весь вьюпорт */
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  /* задається фіксованим елементам для того, щоб його ніхто не перекривав (любе велике число) */
-  z-index: 999999999;
-
-  /* дає прозорість (робиться для того, щоб потім можна було занімувати)  */
-  opacity: 0;
-  /* за рахунок visibility робимо його не відчутним до курсора миші */
-  visibility: hidden;
-  pointer-events: none;
-  transition: opacity 250ms linear,
-    visibility 250ms linear;
-}
-
-.backdrop.is-open {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-}
-
-/* ======== /BACKDROP ======== */
-
-/* ======== MODAL WINDOW ======== */
-.modal {
-  /* зазвичай розробники модалку роблять через абсолюти (а не через флекси), тому що у подальшому треба буде "ловити" кнопку з Х, а за для того щоб її зловити, потрібен батьківський елемент або предок відмінний від статік  */
-  position: absolute;
-  /* щоб відцентрувати модалку */
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  /* ширина, висота - за макетом */
-  width: 517px;
-  min-height: 794px;
-  border-radius: 15px;
-  background-color: #FAFAFA;
-  padding: 40px;
-}
-
-.modal-close-btn {
-  /* для того, щоб кнопка не заважала контенту її ставлять на абсолютах */
-  position: absolute;
-  /* для того, щоб виставити кнопку у правому верхньому куті: */
-  top: 24px;
-  right: 24px;
-  /* прибираємо зайве: */
-  border: none;
-  background-color: transparent;
-  padding: 0;
-  /* для того, щоб кнопка була по розміру іконки: */
-  line-height: 0;
-  stroke: #111111;
-  transition: stroke 250ms linear;
-}
-
-.modal-close-btn:hover,
-.modal-close-btn:focus {
-  stroke: #fd9222;
-}
-
-.review-form-description {
-  width: 298px;
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 1.17;
-  letter-spacing: -0.03em;
-  text-transform: uppercase;
-  margin-bottom: 40px;
-
-  color: #111111;
-}
-
-/* ======== /MODAL WINDOW ======== */
-
-/* ======== REVIEW FORM ======== */
-.review-form-field-wrapper {
-  margin-bottom: 18px;
-}
-
-.review-form-field-lable {
-  display: block;
-  font-size: 14px;
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  margin-bottom: 8px;
-
-  color: rgba(64, 64, 64, 0.30);
-}
-
-.review-form-input-wrapper {
-  position: relative;
-}
-
-.review-form-field {
-  width: 100%;
-  height: 68px;
-  border-radius: 13px;
-  border: 1.5px solid rgba(17, 17, 17, 0.05);
-  padding-left: 62px;
-  transition: border-color 250ms linear;
-}
-
-/* Елементам форм (інпут, чекбокси, тект еріа, радіо кнопки) прописуються тільки фокусі, ховери не відслідковуються */
-.review-form-field:focus {
-  /* задаємо прозорість стандартній рамці */
-  outline-color: transparent;
-  /* відсувуємо її (px на око) */
-  outline-offset: 4px;
-  border-color: #fd9222;
-}
-
-.review-form-field-icon {
-  /* для того, щоб було можливо її позіцінувати: */
-  position: absolute;
-  /* поставити до низу */
-  top: 50%;
-  /* зробити відступ від рамки (по макету) */
-  left: 24px;
-  /* відцентрувати */
-  transform: translateY(-50%);
-  fill: none;
-  stroke: #404040;
-  transition: stroke 250ms linear;
-}
-
-.review-form-field:focus+.review-form-field-icon {
-  stroke: #fd9222;
-}
-
-.review-form-message {
-  width: 100%;
-  height: 137px;
-  border-radius: 13px;
-  border: 1.5px solid rgba(17, 17, 17, 0.05);
-  /* прибираємо повзунок */
-  resize: none;
-  padding: 22px 24px;
-  font-size: 18px;
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  color: rgba(64, 64, 64, 0.30);
-  transition: border-color 250ms linear;
-}
-
-.review-form-message::placeholder {
-  color: rgba(64, 64, 64, 0.30);
-}
-
-.review-form-message:focus {
-  border-color: #fd9222;
-  outline-color: transparent;
-  outline-offset: 4px;
-}
-
-.review-form-checkbox-wrapper {
-  margin-bottom: 40px;
-}
-
-.review-form-checkbox:checked+.review-form-checkbox-lable .review-form-own-checkbox {
-  background-color: #fd9222;
-  fill: #ffffff;
-}
-
-/* 
-.review-form-checkbox:focus+.review-form-checkbox-lable .review-form-own-checkbox {
-  outline: 2px solid rgba(0, 0, 250, 0.5);
-} */
-
-.review-form-checkbox-lable {
-  font-size: 14px;
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  color: rgba(64, 64, 64, 0.60);
-}
-
-.review-form-own-checkbox {
-  /* т.я. спан рядковий елемент, його треба змінити на інший, який буде зручний, залежно від ситуації. В нашому випадку треба, щоб елементи стояли поряд, тому: */
-  display: inline-flex;
-  /* відцентровуємо іконку */
-  justify-content: center;
-  align-items: center;
-  width: 20px;
-  height: 20px;
-  border-radius: 6px;
-  border: 1px solid rgba(17, 17, 17, 0.14);
-  cursor: pointer;
-  margin-right: 12px;
-  /* поки приховуємо іконку, потім ії, покажемо, коли вона буде потрібна */
-  fill: transparent;
-}
-
-.review-form-btn {
-  font-family: inherit;
-  font-size: 14px;
-  font-weight: 600;
-  border: none;
-  border-radius: 100px;
-  padding: 14px 40px;
-  transition: color 250ms linear, background-color 250ms linear;
-  background-color: #FD9222;
-  color: #ffffff;
-}
-
-.review-form-btn:hover,
-.review-form-btn:focus {
-  color: #FD9222;
-  background-color: #FCF1E0;
-}
-
-/* ======== /REVIEW FORM ======== */

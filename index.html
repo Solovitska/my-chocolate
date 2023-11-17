@@ -3,21 +3,28 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
   <title>Simply Chocolate</title>
 
   <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect"
+    href="https://fonts.googleapis.com">
+  <link rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,700&display=swap"
     rel="stylesheet">
 
   <!-- Normalize -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
     integrity="sha512-4xo8blKMVCiXpTaLzQSLSw3KFOVPWhm/TRtuPVc4WG6kUgjH6J03IBuG7JZPkcWMxJ5huwaBpOpnwYElP/m6wg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer" />
   <!-- CSS -->
-  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet"
+    href="./css/styles.css">
 
 </head>
 
@@ -26,31 +33,54 @@
   <header class="page-header">
     <div class="container page-header-container">
       <nav class="page-navigation">
-        <a class="logo link" href="./index.html"><i>SIMPLY</i> CHOCOLATE
-          <svg class="logo-icon" width="24" height="24" aria-label="simply chocolate logotype icon">
+        <a class="logo link"
+          href="./index.html"><i>SIMPLY</i> CHOCOLATE
+          <svg class="logo-icon"
+            width="21"
+            height="21"
+            aria-label="simply chocolate logotype icon">
             <!-- "aria-lable" - скринридер для svg -->
             <use href="./images/icons/sprite.svg#icon-chocolate">
             </use>
           </svg>
         </a>
         <ul class="menu list">
-          <li class="menu-item"><a class="menu-link link" href="./index.html" class="navigation">Home</a></li>
-          <li class="menu-item"><a class="menu-link link" href="" class="navigation">How it’s made?</a></li>
-          <li class="menu-item"><a class="menu-link link" href="" class="navigation">Chocolate is loved</a></li>
+          <li class="menu-item"><a class="menu-link link"
+              href="./index.html"
+              class="navigation">Home</a></li>
+          <li class="menu-item"><a class="menu-link link"
+              href=""
+              class="navigation">How it’s made?</a></li>
+          <li class="menu-item"><a class="menu-link link"
+              href=""
+              class="navigation">Chocolate is loved</a></li>
         </ul>
       </nav>
+      <button class="mobile-open-btn">
+        <svg class="mobile-open-btn-icon"
+          width="28"
+          height="28">
+          <use href="./images/icons/sprite.svg#icon-menu-burger"></use>
+        </svg>
+      </button>
       <ul class="social-list list">
         <li class="social-list-item">
-          <a href="" class="social-list-link">
-            <svg class="social-list-icon" width="24" height="24">
+          <a href=""
+            class="social-list-link">
+            <svg class="social-list-icon"
+              width="24"
+              height="24">
               <use href=" ./images/icons/sprite.svg#icon-instagram">
               </use>
             </svg>
           </a>
         </li>
         <li class="social-list-item">
-          <a href="" class="social-list-link">
-            <svg class="social-list-icon" width="24" height="24">
+          <a href=""
+            class="social-list-link">
+            <svg class="social-list-icon"
+              width="24"
+              height="24">
               <use href=" ./images/icons/sprite.svg#icon-twitter">
               </use>
             </svg>
@@ -68,18 +98,41 @@
         of pure delight!
       </h1>
       <div class="hero-bottom-block">
-        <button class="buy-now-btn" type="button">Buy now</button>
-        <a class="how-made-link link" href="">How it’s made</a>
-        <a class="scroll-down-link link" href="#benefits">scroll down</a>
+        <button class="buy-now-btn"
+          type="button">Buy now</button>
+        <a class="how-made-link link"
+          href="">How it’s made</a>
+        <a class="scroll-down-link link"
+          href="#benefits">
+          scroll down
+          <span class="scroll-down-icon-wrapper">
+            <svg class="scroll-down-icon"
+              width="22"
+              height="22">
+              <use href="./images/icons/sprite.svg#icon-scroll"></use>
+            </svg>
+          </span>
+        </a>
       </div>
     </section>
 
     <!-- OUR BENEFITS -->
-    <section class="benefits section" id="benefits">
+    <section class="benefits section"
+      id="benefits">
       <div class="benefits-container container">
         <h2 class="visually-hidden">Our benefits</h2>
         <ul class="benefits-list list">
           <li class="benefits-list-item">
+            <div class="benefits-list-item-circle">
+              <svg class="benefits-list-item-icon"
+                width="32"
+                height="32"
+                aria-label="benefits icon chocolate-bar">
+                <!-- "aria-lable" - скринридер для svg -->
+                <use href="./images/icons/sprite.svg#icon-chocolate-bar">
+                </use>
+              </svg>
+            </div>
             <h3 class="benefits-list-title">Unsurpassed taste</h3>
             <p class="benefits-list-text">
               Crafted with the finest quality cocoa beans and a dedication to
@@ -89,6 +142,15 @@
             </p>
           </li>
           <li class="benefits-list-item">
+            <div class="benefits-list-item-circle">
+              <svg class="benefits-list-item-icon"
+                width="32"
+                height="32"
+                aria-label="benefits icon coin">
+                <use href="./images/icons/sprite.svg#icon-coin">
+                </use>
+              </svg>
+            </div>
             <h3 class="benefits-list-title">Affordable price</h3>
             <p class="benefits-list-text">
               Indulge in high-quality chocolate without breaking the bank with
@@ -99,6 +161,15 @@
             </p>
           </li>
           <li class="benefits-list-item">
+            <div class="benefits-list-item-circle">
+              <svg class="benefits-list-item-icon"
+                width="32"
+                height="32"
+                aria-label="benefits icon spoon">
+                <use href="./images/icons/sprite.svg#icon-spoon">
+                </use>
+              </svg>
+            </div>
             <h3 class="benefits-list-title">Own production</h3>
             <p class="benefits-list-text">
               We take pride in our own production process, ensuring that every
@@ -112,7 +183,7 @@
     </section>
 
     <!-- INGREDIENTS -->
-    <section class="ingredients section">
+    <!-- <section class="ingredients section">
       <div class="container">
         <h2 class="ingredients-title section-title">
           It all adds up to one exceptional
@@ -126,8 +197,11 @@
         </p>
         <ul class="ingredients-list list">
           <li class="ingredients-list-item">
-            <img class="ingredients-list-img" src="./images/ingredients/milk-chocolate.png" alt="milk chocolate"
-              width="206" height="160" />
+            <img class="ingredients-list-img"
+              src="./images/ingredients/milk-chocolate.png"
+              alt="milk chocolate"
+              width="206"
+              height="160" />
             <h3 class="ingredients-list-title">milk chocolate</h3>
             <div class="overlay">
               <h3 class="overlay-title">milk chocolate</h3>
@@ -146,7 +220,11 @@
             </div>
           </li>
           <li class="ingredients-list-item">
-            <img class="ingredients-list-img" src="./images/ingredients/milk.png" alt="milk" width="206" height="160" />
+            <img class="ingredients-list-img"
+              src="./images/ingredients/milk.png"
+              alt="milk"
+              width="206"
+              height="160" />
             <h3 class="ingredients-list-title">milk</h3>
             <div class="overlay">
               <h3 class="overlay-title">milk</h3>
@@ -166,7 +244,11 @@
             </div>
           </li>
           <li class="ingredients-list-item">
-            <img class="ingredients-list-img" src="./images/ingredients/nuts.png" alt="nuts" width="206" height="160" />
+            <img class="ingredients-list-img"
+              src="./images/ingredients/nuts.png"
+              alt="nuts"
+              width="206"
+              height="160" />
             <h3 class="ingredients-list-title">nuts</h3>
             <div class="overlay">
               <h3 class="overlay-title">Nuts</h3>
@@ -186,8 +268,11 @@
             </div>
           </li>
           <li class="ingredients-list-item">
-            <img class="ingredients-list-img" src="./images/ingredients/semi-sweet-choclate.png"
-              alt="semi-sweet chocolate" width="206" height="160" />
+            <img class="ingredients-list-img"
+              src="./images/ingredients/semi-sweet-choclate.png"
+              alt="semi-sweet chocolate"
+              width="206"
+              height="160" />
             <h3 class="ingredients-list-title">semi - sweet chocolate</h3>
             <div class="overlay">
               <h3 class="overlay-title">semi - sweet chocolate</h3>
@@ -208,16 +293,20 @@
           </li>
         </ul>
       </div>
-    </section>
+    </section> -->
 
     <!-- HOW IT`S MADE -->
-    <section class="how-made section" id="made">
+    <!-- <section class="how-made section"
+      id="made">
       <div class="container">
         <h2 class="how-title section-title">
           How it’s <span class="accent-color">made</span>?
         </h2>
         <div class="how-made-content-wrapper">
-          <img class="how-made-img" src="./images/how-made/how-made.jpg" alt="chocolate making process" width="600"
+          <img class="how-made-img"
+            src="./images/how-made/how-made.jpg"
+            alt="chocolate making process"
+            width="600"
             height="400" />
           <div class="how-made-text-wrapper">
             <h3 class="how-made-list-title">
@@ -244,18 +333,22 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- REVIEWS -->
-    <section class="reviews section" id="reviews">
+    <!-- <section class="reviews section"
+      id="reviews">
       <div class="container">
         <h2 class="reviews-title section-title">
           <span class="accent-color">Chocolate</span> is loved
         </h2>
         <ul class="reviews-list list">
           <li class="reviews-list-item">
-            <img class="reviews-list-avatar" src="./images/reviews/victoria-dobrzhanska.png" alt="Victoria Dobrzhanska"
-              width="80" height="80" />
+            <img class="reviews-list-avatar"
+              src="./images/reviews/victoria-dobrzhanska.png"
+              alt="Victoria Dobrzhanska"
+              width="80"
+              height="80" />
             <h3 class="reviews-list-fullname">Victoria Dobrzhanska</h3>
             <p class="reviews-list-text">
               I love this chocolate bar. Perfect combination of light crispy
@@ -263,7 +356,10 @@
             </p>
           </li>
           <li class="reviews-list-item">
-            <img class="reviews-list-avatar" src="./images/reviews/nazar-babenko.png" alt="Nazar Babenko" width="80"
+            <img class="reviews-list-avatar"
+              src="./images/reviews/nazar-babenko.png"
+              alt="Nazar Babenko"
+              width="80"
               height="80" />
             <h3 class="reviews-list-fullname">Nazar Babenko</h3>
             <p class="reviews-list-text">
@@ -273,7 +369,10 @@
             </p>
           </li>
           <li class="reviews-list-item">
-            <img class="reviews-list-avatar" src="./images/reviews/olena-kampusch.png" alt="Olena Kampusch" width="80"
+            <img class="reviews-list-avatar"
+              src="./images/reviews/olena-kampusch.png"
+              alt="Olena Kampusch"
+              width="80"
               height="80" />
             <h3 class="reviews-list-fullname">Olena Kampusch</h3>
             <p class="reviews-list-text">
@@ -283,13 +382,14 @@
             </p>
           </li>
         </ul>
-        <button class="leave-review-btn" type="button">Leave a review</button>
+        <button class="leave-review-btn"
+          type="button">Leave a review</button>
       </div>
-    </section>
+    </section> -->
   </main>
 
   <!-- PAGE FOOTER -->
-  <footer class="page-footer">
+  <!-- <footer class="page-footer">
     <div class="container">
       <div class="page-footer-top-block">
         <h2 class="page-footer-title">
@@ -301,10 +401,12 @@
           <address>
             <ul class="contact-list list">
               <li class="contact-list-item">
-                <a class="contact-list-link link" href="tel:+380684439426">+380 (68) 443-94-26</a>
+                <a class="contact-list-link link"
+                  href="tel:+380684439426">+380 (68) 443-94-26</a>
               </li>
               <li class="contact-list-item">
-                <a class="contact-list-link link" href="mailto:simplychoc@gmail.com">simplychoc@gmail.com</a>
+                <a class="contact-list-link link"
+                  href="mailto:simplychoc@gmail.com">simplychoc@gmail.com</a>
               </li>
             </ul>
           </address>
@@ -314,23 +416,32 @@
         <nav class="page-navigation">
           <ul class="menu list">
             <li class="menu-item">
-              <a class="menu-link link" href="./index.html">Home</a>
+              <a class="menu-link link"
+                href="./index.html">Home</a>
             </li>
             <li class="menu-item">
-              <a class="menu-link link" href="">How it’s made?</a>
+              <a class="menu-link link"
+                href="">How it’s made?</a>
             </li>
             <li class="menu-item">
-              <a class="menu-link link" href="">Chocolate is loved</a>
+              <a class="menu-link link"
+                href="">Chocolate is loved</a>
             </li>
           </ul>
         </nav>
       </div>
     </div>
-  </footer>
-  <div class="backdrop is-open">
+  </footer> -->
+
+  <!-- MODALKA -->
+  <!-- <div class="backdrop">
     <div class="modal">
-      <button class="modal-close-btn" type="button" aria-label="modal close button">
-        <svg class="modal-close-btn-icon" width="28" height="28">
+      <button class="modal-close-btn"
+        type="button"
+        aria-label="modal close button">
+        <svg class="modal-close-btn-icon"
+          width="28"
+          height="28">
           <use href="./images/icons/sprite.svg#icon-close">
           </use>
         </svg>
@@ -338,54 +449,112 @@
       <p class="review-form-description">leave a review about <span class="accent-color">our chocolate</span></p>
       <form class="review-form">
         <div class="review-form-field-wrapper">
-          <label class="review-form-field-lable" for="user-first-name">Name</label>
-          <!-- Огорнули в дів, тому що іконку треба позіцінувати, а т.я. інпут поодинокий тег, від нього це зробити не можливо -->
-          <div class="review-form-input-wrapper">
-            <input class="review-form-field" type="text" name="user_first_name" id="user-first-name" required
-              pattern="[a-zA-Zа-яА-ЯіІїЇґҐєЄйЙʼ]+" title="Yuliia">
-            <svg class="review-form-field-icon" width="24" height="24">
+          <label class="review-form-field-lable"
+            for="user-first-name">Name</label> -->
+  <!-- Огорнули в дів, тому що іконку треба позіцінувати, а т.я. інпут поодинокий тег, від нього це зробити не можливо -->
+  <!-- <div class="review-form-input-wrapper">
+            <input class="review-form-field"
+              type="text"
+              name="user_first_name"
+              id="user-first-name"
+              required
+              pattern="[a-zA-Zа-яА-ЯіІїЇґҐєЄйЙʼ]+"
+              title="Yuliia">
+            <svg class="review-form-field-icon"
+              width="24"
+              height="24">
               <use href="./images/icons/sprite.svg#icon-user"></use>
             </svg>
           </div>
         </div>
         <div class="review-form-field-wrapper">
-          <label class="review-form-field-lable" for="user-email">Email</label>
+          <label class="review-form-field-lable"
+            for="user-email">Email</label>
           <div class="review-form-input-wrapper">
-            <input class="review-form-field" type="email" name="user_email" id="user-email" required>
-            <svg class="review-form-field-icon" width="24" height="24">
+            <input class="review-form-field"
+              type="email"
+              name="user_email"
+              id="user-email"
+              required>
+            <svg class="review-form-field-icon"
+              width="24"
+              height="24">
               <use href="./images/icons/sprite.svg#icon-mail"></use>
             </svg>
           </div>
         </div>
         <div class="review-form-field-wrapper">
-          <label class="review-form-field-lable" for="user-phone-number">Phone number</label>
+          <label class="review-form-field-lable"
+            for="user-phone-number">Phone number</label>
           <div class="review-form-input-wrapper">
-            <input class="review-form-field" type="tel" name="user_phone_number" id="user-phone-number" required
-              pattern="[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}" title="xxx-xxx-xx-xx">
-            <svg class="review-form-field-icon" width="24" height="24">
+            <input class="review-form-field"
+              type="tel"
+              name="user_phone_number"
+              id="user-phone-number"
+              required
+              pattern="[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}"
+              title="xxx-xxx-xx-xx">
+            <svg class="review-form-field-icon"
+              width="24"
+              height="24">
               <use href="./images/icons/sprite.svg#icon-phone"></use>
             </svg>
           </div>
         </div>
         <div class="review-form-field-wrapper">
-          <label class="review-form-field-lable" for="user-comment">Comment</label>
-          <textarea class="review-form-message" name="user_comment" id="user-comment" type="text"
+          <label class="review-form-field-lable"
+            for="user-comment">Comment</label>
+          <textarea class="review-form-message"
+            name="user_comment"
+            id="user-comment"
+            type="text"
             placeholder="Enter text"></textarea>
         </div>
         <div class="review-form-checkbox-wrapper">
-          <input class="review-form-checkbox visually-hidden" type="checkbox" name="user_policy" id="user-policy"
-            value="true" required>
-          <label class="review-form-checkbox-lable" for="user-policy">
+          <input class="review-form-checkbox visually-hidden"
+            type="checkbox"
+            name="user_policy"
+            id="user-policy"
+            value="true"
+            required>
+          <label class="review-form-checkbox-lable"
+            for="user-policy">
             <span class="review-form-own-checkbox">
-              <svg class="review-form-own-checkbox-icon" width="10" height="9">
+              <svg class="review-form-own-checkbox-icon"
+                width="10"
+                height="9">
                 <use href="./images/icons/sprite.svg#icon-done"></use>
               </svg>
             </span>
-            I accept the terms and conditions of the <a class="privacy-policy-link accent-color" href="">Privacy
+            I accept the terms and conditions of the <a class="privacy-policy-link accent-color"
+              href="">Privacy
               Policy</a></label>
         </div>
-        <button class="review-form-btn" type="submit">Send</button>
+        <button class="review-form-btn"
+          type="submit">Send</button>
       </form>
+    </div>
+  </div> -->
+
+  <!-- Елементи з position: fixed зазвичай описуть в кунці розмітки у body -->
+  <!-- Mobile MENU -->
+  <div class="mobile-menu">
+    <div class="container mobile-menu-container">
+      <button class="mobile-menu-close-btn"
+        type="button">
+        <svg class="mobile-menu-close-btn-icon"
+          width="28"
+          height="28">
+          <use href="./images/icons/sprite.svg#icon-close"></use>
+        </svg>
+      </button>
+      <nav>
+        <ul>
+          <li class="list"><a href="">Home</a></li>
+          <li class="list"><a href="">How it’s made?</a></li>
+          <li class="list"><a href="">Chocolate is love</a>d</li>
+        </ul>
+      </nav>
     </div>
   </div>
 </body>
