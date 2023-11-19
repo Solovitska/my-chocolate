@@ -261,6 +261,7 @@ screen and (min-device-pixel-ratio: 2) {
 .hero-bottom-block {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .buy-now-btn {
@@ -297,7 +298,9 @@ screen and (min-device-pixel-ratio: 2) {
   color: #ffffff;
 }
 
-
+.scroll-down-link-wrapper {
+  margin-top: 32px;
+}
 
 .scroll-down-link {
   display: flex;
@@ -710,10 +713,14 @@ screen and (min-device-pixel-ratio: 2) {
     border-color: #fd9222;
   }
 
+  .scroll-down-link-wrapper {
+    margin-top: 0;
+    margin-left: auto;
+  }
+
   .scroll-down-link {
     font-size: 14px;
     line-height: 1.29;
-    margin-left: auto;
   }
 
   .scroll-down-icon-wrapper {
