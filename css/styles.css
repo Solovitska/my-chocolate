@@ -220,7 +220,6 @@ body {
 }
 
 /* ============== /HEADER Mobile ============== */
-
 /* ============== HERO Mobile ============== */
 .hero {
   max-width: 335px;
@@ -327,7 +326,6 @@ screen and (min-device-pixel-ratio: 2) {
 }
 
 /* ============== /HERO Mobile ============== */
-
 /* ============== BENEFITS Mobile ============== */
 .benefits {
   margin-top: 42px;
@@ -376,6 +374,206 @@ screen and (min-device-pixel-ratio: 2) {
 }
 
 /* ============== /BENEFITS Mobile ============== */
+/* ============== INGREDIENTS Mobile ============== */
+.ingredients-title {
+  width: 280px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 24px;
+}
+
+.ingredients-description {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.29;
+  letter-spacing: -0.02em;
+  width: 300px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  /* тому, що блоковий елемент */
+  margin-bottom: 32px;
+
+  color: #111111;
+}
+
+.ingredients-list-item {
+  /* для того, щоб спозіціунувати картку overlay */
+  position: relative;
+  /* 100% - width батьківського елемента
+    3 - кількість проміжків
+    19px - розмір проміжку між картками
+    4 - кількість карток
+    це робиться замість фіксованної ширини, для подальшого для адаптивності, карточки будуть підлаштовуватись */
+  margin-bottom: 20px;
+  border-radius: 15px;
+  padding-top: 28px;
+  padding-bottom: 28px;
+  padding-left: 56px;
+  padding-right: 56px;
+  border: 1px solid #fd9222;
+  /* "весь контент, який вилізає - приховуй" */
+  overflow: hidden;
+}
+
+.ingredients-list-item:last-child {
+  margin-bottom: 0;
+}
+
+.ingredients-list-item:nth-child(4n + 1) {
+  background-color: #fd9222;
+  color: #ffffff;
+}
+
+/* 
+  4n + 3
+  4 * 0 + 3 = 3;
+  4 * 1 + 3 = 7;
+  4 * 2 + 3 = 11;
+  */
+.ingredients-list-item:nth-child(4n + 3) {
+  background-color: #1e1823;
+  border-color: #1e1823;
+  color: #ffffff;
+}
+
+/* всім парним елементам */
+.ingredients-list-item:nth-child(even) {
+  background-color: #ffffff;
+}
+
+.ingredients-list-img {
+  margin-bottom: 25px;
+}
+
+.ingredients-list-title {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.29;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.overlay {
+  /* щоб елемент був по розміру картки від якої позиціонується */
+  height: 100%;
+  /* коли одна карточка поверх другої, одразу думаємо про absolute */
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 15px;
+  padding: 28px;
+  color: #111111;
+  background-color: #ffffff;
+  /* якщо буде переповнення контенту, зʼявиться скрол */
+  overflow: auto;
+  transition: transform 250ms linear;
+  /* щоб сховати оверлей: */
+  transform: translateY(100%);
+}
+
+.ingredients-list-item:hover .overlay {
+  transform: translateY(0%);
+}
+
+.overlay-title {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+
+  color: #111111;
+}
+
+.overlay-tegs-list {
+  display: flex;
+  column-gap: 6px;
+  margin-bottom: 14px;
+}
+
+/* звертаємось до непарних ли */
+.overlay-tegs-item:nth-child(odd) .overlay-tegs-list-text {
+  background-color: #FD9222;
+  color: #ffffff;
+}
+
+/* до парних ли  */
+.overlay-tegs-item:nth-child(even) .overlay-tegs-list-text {
+  background-color: #fafafa;
+}
+
+.overlay-tegs-list-text {
+  display: flex;
+  height: 24px;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1.2;
+  border-radius: 35px;
+  padding-left: 16px;
+  padding-right: 16px;
+  align-items: center;
+  border: 1px solid #FD9222;
+}
+
+.overlay-text {
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.02em;
+}
+
+/* ============== /INGREDIENTS Mobile ============== */
+/* ============== HOW IT`S MADE Mobile ============== */
+.how-title {
+  margin-bottom: 32px;
+}
+
+.how-made-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.how-made-img {
+  margin-bottom: 20px;
+}
+
+.how-made-text-wrapper {
+  flex-grow: 1;
+  padding: 20px 14px;
+  border-radius: 15px;
+  background-color: #ffffff;
+}
+
+.how-made-list-title {
+  max-width: 307px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.33;
+  margin-bottom: 20px;
+
+  color: #111111;
+}
+
+.how-made-list {
+  padding-left: 16px;
+}
+
+.how-made-list-item {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.29;
+  letter-spacing: -0.02em;
+
+  color: #111111;
+}
+
+.how-made-list-item:not(:last-child) {
+  margin-bottom: 18px;
+}
+
+/* ============== /HOW IT`S MADE Mobile ============== */
+
 
 /* --------- TABLET --------- */
 @media screen and (min-width: 768px) {
@@ -447,33 +645,21 @@ screen and (min-device-pixel-ratio: 2) {
 
   .social-list-icon {
     fill: none;
-    /* прибрати заливку с свг, т.я. вони повністю чорні були */
     stroke: #111111;
-    /* за допомогою stroke фарбуємо лінії з яких створені свг */
     transition: stroke 250ms linear;
-    /* transition прописуємо тому елементу, у якого змінюється значення властивості */
   }
 
   .social-list-link {
     display: block;
-    /* т.я. посилання це рядковий елемент, для коректного відображення іконки задаємо дісплей блок */
-    /* щоб посилання було по висоті іконки задаємо (прибираємо міжрядковий інтервал): */
     line-height: 0;
   }
 
-  /* 
-.social-list-icon:hover {
-  stroke: #FD9222;} */
-  /* фокус задати не можемо, тому що його можна 
-  задавати тільки на інтерактивні елементи 
-  (посилання, кнопки, елементи форм), але його зробити можна через посилання: */
   .social-list-link:hover .social-list-icon,
   .social-list-link:focus .social-list-icon {
     stroke: #FD9222;
   }
 
   /* ============== /HEADER Tablet ============== */
-
   /* ============== HERO Tablet ============== */
   .hero {
     max-width: 704px;
@@ -546,7 +732,6 @@ screen and (min-device-pixel-ratio: 2) {
   }
 
   /* ============== /HERO Tablet ============== */
-
   /* ============== BENEFITS Tablet ============== */
   .benefits {
     margin-top: 72px;
@@ -574,6 +759,65 @@ screen and (min-device-pixel-ratio: 2) {
   }
 
   /* ============== /BENEFITS Tablet ============== */
+  /* ============== INGREDIENTS Tablet ============== */
+  .ingredients-title {
+    width: 411px;
+    margin-bottom: 28px;
+  }
+
+  .ingredients-description {
+    width: 486px;
+    margin-bottom: 50px;
+  }
+
+  .ingredients-list {
+    display: flex;
+    flex-wrap: wrap;
+    /* якщо додадуть ще картки, вони пересунуться на слідуючий рядок */
+    gap: 32px;
+  }
+
+  .ingredients-list-item {
+    /* для того, щоб спозіціунувати картку overlay */
+    position: relative;
+    /* 100% - width батьківського елемента
+  3 - кількість проміжків
+  19px - розмір проміжку між картками
+  4 - кількість карток
+  це робиться замість фіксованної ширини, для подальшого для адаптивності, карточки будуть підлаштовуватись */
+    width: calc((100% - 1 * 32px) / 2);
+    margin-bottom: 0;
+  }
+
+  /* ============== /INGREDIENTS Tablet ============== */
+  /* ============== HOW IT`S MADE Tablet ============== */
+  .how-title {
+    margin-bottom: 50px;
+  }
+
+  .how-made-text-wrapper {
+    padding: 32px;
+  }
+
+  .how-made-list-title {
+    max-width: 350px;
+    margin-bottom: 28px;
+  }
+
+  .how-made-list {
+    padding-right: 70px;
+  }
+
+  .how-made-list-item {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.29;
+    letter-spacing: -0.02em;
+
+    color: #111111;
+  }
+
+  /* ============== /HOW IT`S MADE Tablet ============== */
 
 }
 
@@ -595,7 +839,6 @@ screen and (min-device-pixel-ratio: 2) {
   }
 
   /* ============== /HEADER Desctop ============== */
-
   /* ============== HERO Desctop ============== */
 
   .hero {
@@ -621,7 +864,6 @@ screen and (min-device-pixel-ratio: 2) {
   }
 
   /* ============== /HERO Desctop ============== */
-
   /* ============== BENEFITS Desctop ============== */
 
   .benefits-container {
@@ -655,4 +897,48 @@ screen and (min-device-pixel-ratio: 2) {
   }
 
   /* ============== /BENEFITS Desctop ============== */
+  /* ============== INGREDIENTS Desctop ============== */
+  .ingredients-list {
+    flex-wrap: nowrap;
+    gap: 19px;
+  }
+
+  .ingredients-list-item {
+    width: calc((100% - 1 * 19px) / 4);
+    padding-left: 28px;
+    padding-right: 36px;
+  }
+
+  .ingredients-list-img {
+    margin-bottom: 36px;
+  }
+
+  .overlay {
+    padding: 20px;
+  }
+
+  /* ============== /INGREDIENTS Desctop ============== */
+  /* ============== HOW IT`S MADE Desctop ============== */
+  .how-made-content-wrapper {
+    flex-direction: row;
+    column-gap: 20px;
+  }
+
+  .how-made-img {
+    margin-bottom: 0;
+  }
+
+  .how-made-list-title {
+    margin-bottom: 32px;
+  }
+
+  .how-made-list {
+    padding-right: 26px;
+  }
+
+  .how-made-list-item:not(:last-child) {
+    margin-bottom: 24px;
+  }
+
+  /* ============== /HOW IT`S MADE Desctop ============== */
 }
