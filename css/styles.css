@@ -577,6 +577,196 @@ screen and (min-device-pixel-ratio: 2) {
 
 /* ============== /HOW IT`S MADE Mobile ============== */
 
+/* ============== REVIEWS Mobile ============== */
+.reviews-section {
+  padding-top: 30px;
+  padding-bottom: 60px;
+}
+
+
+.reviews-title {
+  margin-bottom: 74px;
+}
+
+/* .reviews-list {
+  display: flex;
+  column-gap: 28px;
+  margin-bottom: 50px;
+} */
+
+.reviews-list-item {
+  position: relative;
+  padding: 56px 18px 42px 18px;
+  border: 1px solid rgba(17, 17, 17, 0.1);
+  border-radius: 15px;
+  background-color: #ffffff;
+  box-shadow: 0px 9.05px 100px 0px rgba(17, 17, 17, 0.03);
+}
+
+.reviews-list-avatar {
+  /* для позіцінування аватарки */
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.reviews-list-fullname {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.33;
+  margin-bottom: 24px;
+
+  color: #111111;
+}
+
+.reviews-list-text {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.29;
+  letter-spacing: -0.02em;
+
+  color: rgba(17, 17, 17, 0.7);
+}
+
+.leave-review-btn {
+  display: block;
+  width: 222px;
+  font-size: 18px;
+  font-weight: 600;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  margin-top: 32px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 100px;
+  border: 1px solid #fd9222;
+  color: #111111;
+  background-color: #ffffff;
+  transition: background-color 250ms linear, color 250ms linear;
+}
+
+.leave-review-btn:hover,
+.leave-review-btn:focus {
+  color: #ffffff;
+  background-color: #fd9222;
+}
+
+/* ============== /REVIEWS Mobile ============== */
+
+/* ============== FOOTER Mobile ============== */
+.page-footer {
+  padding-top: 32px;
+  padding-bottom: 32px;
+  background-color: #1e1823;
+}
+
+.page-footer-top-block {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 32px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.page-footer-title {
+  width: 300px;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.17;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+
+  margin-bottom: 32px;
+}
+
+.contact-title {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.29;
+  text-align: start;
+  margin-bottom: 14px;
+
+  color: #ffffff;
+}
+
+.contact-list-link {
+  font-size: 14px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.29;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: white;
+}
+
+.contact-list-link:hover,
+.contact-list-link:focus {
+  color: #fd9222;
+}
+
+.contact-list-item:not(:last-child) {
+  margin-bottom: 4px;
+}
+
+.page-footer-bottom-block {
+  padding-top: 32px;
+}
+
+.page-footer-menu {
+  color: #ffffff;
+}
+
+.page-footer-bottom-block {
+  padding-top: 32px;
+}
+
+.menu-item {
+  margin-bottom: 18px;
+}
+
+.menu-item:last-child {
+  margin-bottom: 32px;
+}
+
+.menu-link {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: -0.02em;
+  color: white;
+}
+
+.footer-input {
+  border: 1.50px solid rgba(255, 255, 255, 0.15);
+  border-radius: 30px;
+  padding: 14px 18px;
+  margin-right: 8px;
+  width: 207px;
+  height: 45px;
+  outline: none;
+  background-color: transparent;
+  color: #ffffff;
+}
+
+.footer-input::placeholder {
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.footer-input+.buy-now-btn {
+  height: 45px;
+  padding: 14px 26px;
+
+}
+
+/* ============== /FOOTER Mobile ============== */
+
+
 
 /* --------- TABLET --------- */
 @media screen and (min-width: 768px) {
@@ -826,6 +1016,62 @@ screen and (min-device-pixel-ratio: 2) {
 
   /* ============== /HOW IT`S MADE Tablet ============== */
 
+  /* ============== REVIEWS Tablet ============== */
+
+  .reviews-section {
+    padding-top: 40px;
+    padding-bottom: 80px;
+  }
+
+  .reviews-title {
+    margin-bottom: 91px;
+  }
+
+  .reviews-list {
+    display: flex;
+    column-gap: 16px;
+    margin-bottom: 50px;
+  }
+
+  .reviews-list-item {
+    width: calc((100% - 16px) / 2);
+    padding: 56px 16px 42px 16px;
+  }
+
+  .leave-review-btn {
+    margin-top: 50px;
+  }
+
+  /* ============== /REVIEWS Tablet ============== */
+
+  /* ============== FOOTER Tablet ============== */
+  .page-footer {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .page-footer-title {
+    font-size: 28px;
+    line-height: 1.21;
+    margin-bottom: 0;
+  }
+
+  .page-footer-bottom-block {
+    padding-top: 24px;
+  }
+
+  .page-footer-top-block {
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 50px;
+  }
+
+  .menu-link.hidden {
+    display: none;
+  }
+
+  /* ============== /FOOTER Tablet ============== */
+
 }
 
 /* --------- DESCTOP --------- */
@@ -948,4 +1194,31 @@ screen and (min-device-pixel-ratio: 2) {
   }
 
   /* ============== /HOW IT`S MADE Desctop ============== */
+
+  /* ============== REVIEWS Desctop ============== */
+  .reviews-section {
+    padding-top: 50px;
+    padding-bottom: 100px;
+  }
+
+  .reviews-list {
+    display: flex;
+    column-gap: 28px;
+    margin-bottom: 50px;
+  }
+
+  .reviews-list-item {
+    width: calc((100% - 56px) / 3);
+    padding: 56px 24px 24px 24px;
+  }
+
+  /* ============== /REVIEWS Desctop ============== */
+
+  /* ============== FOOTER Desctop ============== */
+
+  .page-footer-menu {
+    color: #ffffff;
+  }
+
+  /* ============== /FOOTER Desctop ============== */
 }
